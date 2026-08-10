@@ -10,6 +10,12 @@ builder.Services.AddHttpClient("AppOne", client =>
     client.BaseAddress = new Uri(appOneBaseUrl);
 });
 
+var authSiteBaseUrl = builder.Configuration["AuthSite:BaseUrl"] ?? "http://localhost:5001";
+builder.Services.AddHttpClient("AuthSite", client =>
+{
+    client.BaseAddress = new Uri(authSiteBaseUrl);
+});
+
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())

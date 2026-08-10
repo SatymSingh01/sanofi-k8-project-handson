@@ -31,5 +31,6 @@ services:
     environment:
       ASPNETCORE_ENVIRONMENT: Development
       AppOne__BaseUrl: http://app-one:8080
+      AuthSite__BaseUrl: http://auth-site:8080
     depends_on:
       - app-one
